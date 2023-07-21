@@ -1,0 +1,11 @@
+@import "src/styles/colors";
+
+.container {
+    background: $gray;
+    color: #fff;
+    border: none;
+    outline: none;
+
+    padding: 18px 26px 15px;
+    font-size: 14px;
+}
