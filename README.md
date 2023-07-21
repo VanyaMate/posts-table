@@ -1,27 +1,54 @@
-# React + TypeScript + Vite
+<h1>PostsTable</h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<h3>Настройки</h3>
 
-Currently, two official plugins are available:
+1. <b>limit</b> - Сколько показать на одной странице.
+2. <b>offset</b> - Первоначальный отступ.
+3. <b>search.defaultValue</b> - Первоначальный поиск.
+4. <b>headers</b> - Заголовки.
+<p>В заголовках настраиваются сами заголовки и первоначальная сортировка</p>
+<p>
+<b>headers.title</b> - то оторазится
+</p>
+<p>
+<b>headers.as</b> - то по какому ключу сортировать
+</p>
+<p>
+<b>headers.width</b> - ширина заголовка
+</p>
+<p>
+<b>sortKey</b> - то по какому ключу сортировать изначально
+</p>
+<p>
+<b>sortType</b> - тип сортировки (asc | desc)
+</p>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+5. <b>posts</b> - посты. Указываются лимит, оффсет, как сортировать и фильтрация.
+<p>
+<b>limit</b> - сколько взять постов
+</p>
+<p>
+<b>offset</b> - сдвиг
+</p>
+<p>
+<b>sortBy</b> - по какому ключу сортировать и как
+</p><p>
+<b>searchIn</b> - в чем проивзодить поиск (keyof T). Если нужно искать еще в 'body' - указываем body: true, или если 'id' - то id: true
+</p>
+<p>
+<b>search</b> - поиск по этому значению
+</p>
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+6. <b>paginationData</b> - настройки для пагинации  
+<p>
+<b>limit</b> - сколько всего на странице может быть элементов
+</p>
+<p>
+<b>offset</b> - сдвиг
+</p>
+<p>
+<b>count</b> - всего элементов
+</p>
+<p>
+<b>onChange</b> - callback при изменении страницы через пагинацию
+</p>
