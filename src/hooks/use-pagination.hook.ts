@@ -69,10 +69,10 @@ export const usePagination = function (options: UsePaginationOptions): UsePagina
     }, [ pagesAmount, currentPage ]);
     const next                = useCallback(() => {
         setPage(Math.min(pagesAmount, currentPage + 1));
-    }, [ offset ]);
+    }, [ offset, pagesAmount, currentPage ]);
     const prev                = useCallback(() => {
         setPage(Math.max(1, currentPage - 1));
-    }, [ offset ]);
+    }, [ offset, currentPage ]);
 
     return useMemo<UsePaginationData>(() => ({
         pagesAmount,
