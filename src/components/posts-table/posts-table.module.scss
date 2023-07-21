@@ -1,5 +1,11 @@
+@import "src/styles/sizes";
+
 .container {
     display: flex;
     flex-direction: column;
     gap: 15px;
+
+    @media screen and (max-width: $mobile) {
+        gap: 10px;
+    }
 }

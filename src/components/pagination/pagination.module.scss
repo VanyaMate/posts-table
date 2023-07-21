@@ -1,13 +1,27 @@
+@import "src/styles/sizes";
+
 .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 5%;
 
+    @media screen and (max-width: $mobile) {
+        padding: 0;
+
+        .pages {
+            gap: 10px;
+        }
+    }
+
     .step {
         // Чтобы не делать отдельный компонент.
         font-size: 24px !important;
         font-style: normal !important;
+
+        @media screen and (max-width: $mobile) {
+            font-size: 14px !important;
+        }
     }
 
     .pages {

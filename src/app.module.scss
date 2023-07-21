@@ -1,6 +1,12 @@
+@import "src/styles/sizes";
+
 .container {
     width: 100%;
     padding: 20px;
+
+    @media screen and (max-width: $mobile) {
+        padding: 10px;
+    }
 
     .content {
         margin: auto;
