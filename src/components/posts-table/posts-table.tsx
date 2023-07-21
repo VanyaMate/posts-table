@@ -1,6 +1,6 @@
 import Table from '../table/table.tsx';
 import { useMemo, useState } from 'react';
-import { TableBodyRow } from '../table/table-body.tsx';
+import { TableBodyRow } from '../table/table-body/table-body.tsx';
 import { usePosts } from '../../hooks/use-posts.hook.ts';
 import {
     useTableHeaders,
@@ -10,7 +10,8 @@ import { Post } from '../../store/posts/post.interface.ts';
 import Pagination from '../pagination/pagination.tsx';
 import { usePagination } from '../../hooks/use-pagination.hook.ts';
 import { useInput, UseInputData } from '../../hooks/use-input.hook.ts';
-import Input from '../ui/inputs/input/input.tsx';
+import css from './posts-table.module.scss';
+import InputWithIcon from '../ui/inputs/input-with-icon/input-with-icon.tsx';
 
 
 const PostsTable = () => {
@@ -25,9 +26,9 @@ const PostsTable = () => {
     // Заголовки таблицы
     const headers: UseTableHeadersData<Post> = useTableHeaders<Post>({
         headers : [
-            { title: 'id' },
-            { title: 'title' },
-            { title: 'description', as: 'body' },
+            { title: 'ID', as: 'id', width: '10%' },
+            { title: 'Title', as: 'title', width: '30%' },
+            { title: 'Description', as: 'body', width: '60%' },
         ],
         sortKey : 'id',
         sortType: 'asc',
@@ -56,8 +57,10 @@ const PostsTable = () => {
     }, [ posts ]);
 
     return (
-        <div>
-            <Input hook={ search } placeholder={'Поиск'}/>
+        <div className={ css.container }>
+            <InputWithIcon icon={ '/images/svg/search.icon.svg' }
+                           hook={ search }
+                           placeholder={ 'Поиск' }/>
             <Table headers={ headers.headers } rows={ rows }/>
             <Pagination paginationData={ paginationData }/>
         </div>

@@ -1,0 +1,49 @@
+@import "src/styles/colors";
+
+$arrowSize: 8px;
+
+.container {
+    th {
+        background: $darkGray;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 600;
+        padding: 14px;
+        transition: .05s;
+        border: 1px solid $darkGray;
+
+        .content {
+            display: inline-block;
+            position: relative;
+            padding-right: 0;
+            transition: .1s;
+
+            &.active {
+                padding-right: 30px;
+
+                &.desc:after {
+                    transform: translateY(-25%) rotate(135deg);
+                }
+
+                &:after {
+                    content: '';
+                    transition: .1s;
+                    position: absolute;
+                    right: 0;
+                    top: 50%;
+                    transform: translateY(-75%) rotate(-45deg);
+                    width: $arrowSize;
+                    height: $arrowSize;
+                    border: none;
+                    border-left: 1px solid $whiteGray;
+                    border-bottom: 1px solid $whiteGray;
+                }
+            }
+        }
+
+        &:hover {
+            background: $gray;
+            cursor: pointer;
+        }
+    }
+}

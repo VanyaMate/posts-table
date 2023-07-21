@@ -1,4 +1,5 @@
 import React from 'react';
+import css from './table-body.module.scss';
 
 
 export type TableBodyRow = {
@@ -14,7 +15,7 @@ const TableBody: React.FC<TableBodyProps> = ({
     rows,
 }) => {
     return (
-        <tbody>
+        <tbody className={css.container}>
         {
             rows.map(({ items, id }, index) =>
                 <tr key={ id ?? index }>

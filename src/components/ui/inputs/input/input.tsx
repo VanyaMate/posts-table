@@ -3,7 +3,7 @@ import { UseInputData } from '../../../../hooks/use-input.hook.ts';
 import css from './input.module.scss';
 
 
-interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
     hook: UseInputData;
 }
 

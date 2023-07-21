@@ -1,8 +1,9 @@
 import React from 'react';
 import TableHeader, {
     TableHeaderItem,
-} from './table-header.tsx';
-import TableBody, { TableBodyRow } from './table-body.tsx';
+} from './table-header/table-header.tsx';
+import TableBody, { TableBodyRow } from './table-body/table-body.tsx';
+import css from './table.module.scss';
 
 
 interface TableProps {
@@ -15,7 +16,7 @@ const Table: React.FC<TableProps> = ({
     rows,
 }) => {
     return (
-        <table>
+        <table className={css.container}>
             <TableHeader items={ headers }/>
             <TableBody rows={ rows }/>
         </table>

@@ -1,0 +1,12 @@
+.container {
+    position: relative;
+
+    .icon {
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}

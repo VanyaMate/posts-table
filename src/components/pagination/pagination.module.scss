@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+
+    .step {
+        // Чтобы не делать отдельный компонент.
+        font-size: 24px !important;
+        font-style: normal !important;
+    }
+
+    .pages {
+        display: flex;
+        gap: 15px;
+    }
+}

@@ -1,0 +1,17 @@
+@import "src/styles/colors";
+
+.container {
+    color: $darkGray;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 700;
+    cursor: pointer;
+
+    &:hover:not(.active) {
+        color: $gray;
+    }
+
+    &.active {
+        color: #7EBC3C;
+    }
+}

@@ -1,11 +1,14 @@
 import { useMemo, useState } from 'react';
 import { SortBy, SortType } from '../types/index.types.ts';
-import { TableHeaderItem } from '../components/table/table-header.tsx';
+import {
+    TableHeaderItem,
+} from '../components/table/table-header/table-header.tsx';
 
 
 interface UseTableHeaderOption<T> {
     title: string;
     as?: keyof T;
+    width?: string;
 }
 
 interface UseTableHeadersOptions<T> {
@@ -37,6 +40,7 @@ export const useTableHeaders = function <T> (options: UseTableHeadersOptions<T>)
                 },
                 sorted  : sortKey === headerKey,
                 sortType: sortType,
+                width   : header.width ?? 'auto',
             };
         });
     }, [ options.headers, sortKey, sortType ]);

@@ -1,0 +1,11 @@
+@import "src/styles/colors";
+
+.container {
+    th {
+        border: 1px solid $whiteGray;
+        padding: 14px;
+        min-height: 56px;
+        font-size: 13px;
+        color: $darkGray;
+    }
+}

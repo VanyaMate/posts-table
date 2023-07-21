@@ -5,7 +5,12 @@
     color: #fff;
     border: none;
     outline: none;
+    width: 100%;
 
     padding: 18px 26px 15px;
     font-size: 14px;
+
+    &::placeholder {
+        color: $lightGray;
+    }
 }
