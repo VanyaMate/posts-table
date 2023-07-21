@@ -31,7 +31,7 @@ export const usePosts = function (options: UsePostsOptions) {
                           let match = false;
                           for (let key in options.searchIn) {
                               const value = post[key as keyof Post].toString();
-                              match       = !!value.match(options.search);
+                              match       = !!value.match(new RegExp(options.search, 'gi'));
                           }
                           return match;
                       })
